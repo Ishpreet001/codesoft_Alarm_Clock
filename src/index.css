@@ -1,0 +1,218 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Professional Alarm Clock Design System - Formal Corporate Theme */
+
+@layer base {
+  :root {
+    /* Professional color palette */
+    --background: 0 0% 100%;
+    --background-secondary: 240 4.8% 95.9%;
+    --foreground: 222.2 84% 4.9%;
+
+    /* Clean cards with subtle borders */
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --card-glass: 0 0% 100% / 0.95;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    /* Primary - Professional navy blue */
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --primary-glow: 221.2 83.2% 63.3%;
+
+    /* Secondary - Light gray */
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    /* Muted elements */
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    /* Accent - Professional teal */
+    --accent: 192 95% 35%;
+    --accent-foreground: 210 40% 98%;
+    --accent-glow: 192 95% 45%;
+
+    /* Formal tab colors */
+    --tab-active: 221.2 83.2% 53.3%;
+    --tab-inactive: 215.4 16.3% 46.9%;
+    --tab-border: 214.3 31.8% 91.4%;
+
+    /* Alarm status colors - more formal */
+    --alarm-active: 142 76% 36%;
+    --alarm-active-foreground: 210 40% 98%;
+    --alarm-inactive: 215.4 16.3% 46.9%;
+    --alarm-warning: 32 95% 44%;
+    --alarm-danger: 0 84% 60%;
+
+    /* Destructive - Professional red */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Clean borders */
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+
+    --radius: 0.5rem;
+
+    /* Professional gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(240 4.8% 95.9%), hsl(0 0% 100%));
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(240 4.8% 95.9%));
+    --gradient-accent: linear-gradient(135deg, hsl(192 95% 35%), hsl(221.2 83.2% 53.3%));
+    
+    /* Subtle shadows */
+    --shadow-glow: 0 4px 12px hsl(221.2 83.2% 53.3% / 0.15);
+    --shadow-accent: 0 4px 12px hsl(192 95% 35% / 0.15);
+    --shadow-card: 0 2px 8px hsl(222.2 84% 4.9% / 0.08);
+    
+    /* Professional transitions */
+    --transition-smooth: all 0.2s ease-in-out;
+    --transition-bounce: all 0.3s ease-out;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background: var(--gradient-primary);
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+@layer utilities {
+  /* Professional card styling */
+  .glass {
+    background: var(--gradient-card);
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow-card);
+  }
+  
+  /* Professional shadows */
+  .glow-primary {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .glow-accent {
+    box-shadow: var(--shadow-accent);
+  }
+  
+  /* Time display styling */
+  .time-display {
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+  }
+  
+  /* Professional tab styles */
+  .tab-active {
+    border-bottom: 2px solid hsl(var(--tab-active));
+    color: hsl(var(--tab-active));
+  }
+  
+  .tab-inactive {
+    color: hsl(var(--tab-inactive));
+    border-bottom: 2px solid transparent;
+  }
+  
+  /* Subtle pulse for active alarms */
+  .pulse-ring {
+    animation: pulse-ring 3s ease-in-out infinite;
+  }
+  
+  @keyframes pulse-ring {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.02);
+      opacity: 0.9;
+    }
+  }
+  
+  /* Professional transitions */
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+  
+  /* Professional layout */
+  .formal-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .formal-header {
+    border-bottom: 1px solid hsl(var(--border));
+    background: hsl(var(--background));
+    box-shadow: var(--shadow-card);
+  }
+}
