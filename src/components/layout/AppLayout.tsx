@@ -56,7 +56,7 @@ export const AppLayout = () => {
           <div className="flex items-center justify-between py-4">
             <div className="flex items-center gap-3">
               <AlarmClock className="w-8 h-8 text-primary" />
-              <h1 className="text-2xl font-bold">Professional Alarm Clock</h1>
+              <h1 className="text-2xl font-bold">Codesoft Alarm Clock</h1>
             </div>
             <div className="text-sm text-muted-foreground">
               {alarms.filter(a => a.isActive).length} active alarm{alarms.filter(a => a.isActive).length !== 1 ? 's' : ''}
